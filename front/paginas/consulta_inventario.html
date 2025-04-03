@@ -1,0 +1,42 @@
+<!-- consulta_inventario.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Inventario</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta de Inventario</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+        </nav>
+    </header>
+    <main>
+        <form>
+            <label for="bodega">Seleccione la bodega:</label>
+            <select id="bodega" name="bodega">
+                <option value="central">Central</option>
+                <option value="pacifico">Pacífico</option>
+                <option value="caribe">Caribe</option>
+            </select>
+            <button type="submit">Consultar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Bodega</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
