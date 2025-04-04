@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+Para usarlo en registro producto 
+-->
+<form th:action="@{/templates/registro_producto}" method="post" th:object="${producto}">
+    <label>Nombre:</label>
+    <input type="text" th:field="*{nombreProducto}" required />
+
+    <label>Descripción:</label>
+    <textarea th:field="*{descripcion}"></textarea>
+
+    <label>Unidad de Medida:</label>
+    <select th:field="*{unidadMedida}">
+        <option th:each="u : ${unidades}" th:value="${u}" th:text="${u.nombreEstado}"></option>
+    </select>
+
+    <label>Estado:</label>
+    <select th:field="*{estado}">
+        <option th:each="e : ${estados}" th:value="${e}" th:text="${e.activo ? 'Activo' : 'Inactivo'}"></option>
+    </select>
+
+    <button type="submit">Guardar</button>
+</form>
+
+<!--
+Para usarlo en realizar pedido
+-->
+<form th:action="@{/templates/realizar_pedido}" method="post">
+    <label>Producto:</label>
+    <select name="idProducto">
+        <option th:each="p : ${productos}" th:value="${p.idProducto}" th:text="${p.nombreProducto}"></option>
+    </select>
+
+    <label>Cantidad:</label>
+    <input type="number" name="cantidad" required />
+
+    <label>Sede:</label>
+    <select name="idSede">
+        <option th:each="s : ${sedes}" th:value="${s.idSede}" th:text="${s.nombreSede}"></option>
+    </select>
+
+    <label>Tipo de Factura:</label>
+    <select name="idTipoFactura">
+        <option th:each="tf : ${tiposFactura}" th:value="${tf.idTipoFactura}" th:text="${tf.nombre}"></option>
+    </select>
+
+    <label>Tipo de Pedido:</label>
+    <select name="idTipoPedido">
+        <option th:each="tp : ${tiposPedido}" th:value="${tp.idTipoPedido}" th:text="${tp.nombreEstado}"></option>
+    </select>
+
+    <button type="submit">Realizar Pedido</button>
+</form>
+
+<!--
+Para usarlo en despacho pedidos
+-->
+<form th:action="@{/templates/despacho_pedidos}" method="post">
+    <label>Pedido:</label>
+    <select name="idPedido">
+        <option th:each="p : ${pedidos}" th:value="${p.idPedido}" th:text="'Pedido #' + ${p.idPedido}"></option>
+    </select>
+
+    <label>Sede que despacha:</label>
+    <select name="idSede">
+        <option th:each="s : ${sedes}" th:value="${s.idSede}" th:text="${s.nombreSede}"></option>
+    </select>
+
+    <button type="submit">Despachar</button>
+</form>

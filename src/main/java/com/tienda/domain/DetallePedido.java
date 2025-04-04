@@ -1,4 +1,3 @@
-
 package com.tienda.domain;
 
 import jakarta.persistence.*;
