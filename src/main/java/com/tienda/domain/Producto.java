@@ -6,39 +6,24 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Producto")
+@Table(name = "FIDE_PRODUCTO_TB")
 public class Producto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+   @Id
+    @Column(name = "ID_PRODUCTO")
+    private int idProducto;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_producto")
-    private long idProducto;
+    @Column(name = "NOMBRE_PRODUCTO")
+    private String nombreProducto;
 
+    @Column(name = "DESCRIPCION")
     private String descripcion;
-    private String detalle;
-    private double precio;
-    private int existencias;
 
-    @Column(name = "ruta_imagen")
-    private String rutaImagen;
+    @ManyToOne
+    @JoinColumn(name = "ID_UNIDAD_MEDIDA")
+    private UnidadMedida unidadMedida;
 
-    private boolean activo;
-
-    @ManyToOne​
-    @JoinColumn(name = "id_categoria")
-    Categoria categoria;
-
-    public Producto() {
-    }
-
-    public Producto(String descripcion, String detalle, double precio, int existencias, String imagen, boolean activo) {
-        this.descripcion = descripcion;
-        this.detalle = detalle;
-        this.precio = precio;
-        this.existencias = existencias;
-        this.rutaImagen = imagen;
-        this.activo = activo;
-    }
+    @ManyToOne
+    @JoinColumn(name = "ID_ESTADO")
+    private Estado estado;
 }

@@ -1,0 +1,44 @@
+<!-- despacho_pedidos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despacho de Pedidos</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+
+</head>
+<body>
+    <header>
+        <h1>Despacho de Pedidos</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+        </nav>
+    </header>
+    <main>
+        <form>
+            <label for="factura">Número de Factura:</label>
+            <input type="text" id="factura" name="factura" required>
+
+            <label for="origen">Sede de Origen:</label>
+            <select id="origen" name="origen" required>
+                <option value="central">Central</option>
+                <option value="pacifico">Pacífico</option>
+                <option value="caribe">Caribe</option>
+            </select>
+
+            <label for="destino">Sede de Destino:</label>
+            <select id="destino" name="destino" required>
+                <option value="central">Central</option>
+                <option value="pacifico">Pacífico</option>
+                <option value="caribe">Caribe</option>
+            </select>
+
+            <label for="fecha">Fecha de Despacho:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <button type="submit">Confirmar Despacho</button>
+        </form>
+    </main>
+</body>
+</html>
