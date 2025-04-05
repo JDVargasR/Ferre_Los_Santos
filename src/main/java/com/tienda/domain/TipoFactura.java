@@ -1,4 +1,3 @@
-
 package com.tienda.domain;
 
 import jakarta.persistence.*;
@@ -18,4 +17,8 @@ public class TipoFactura implements Serializable {
 
     @Column(name = "NOMBRE")
     private String nombre;
+
+    public TipoFactura(int id) {
+        this.idTipoFactura = id;
+    }
 }

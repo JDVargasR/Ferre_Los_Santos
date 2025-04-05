@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tienda.controller;
 
 import com.tienda.domain.*;
@@ -29,9 +25,6 @@ public class PedidoController {
 
     @Autowired
     private SedeService sedeService;
-
-    @Autowired
-    private EstadoService estadoService;
 
     @Autowired
     private TipoFacturaService tipoFacturaService;

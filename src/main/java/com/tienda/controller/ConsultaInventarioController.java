@@ -1,8 +1,7 @@
 package com.tienda.controller;
 
 import com.tienda.domain.Sede;
-import com.tienda.service.InventarioService;
-
+import com.tienda.service. *;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,8 +25,7 @@ public class ConsultaInventarioController {
 
     @PostMapping("/consulta_inventario")
     public String consultarInventario(@RequestParam("idSede") int idSede, Model model) {
-        Sede sede = new Sede();
-        sede.setIdSede(idSede);
+        Sede sede = new Sede(idSede);
         var inventario = inventarioService.getInventarioPorSede(sede);
         model.addAttribute("inventario", inventario);
         model.addAttribute("sedes", sedeService.getSedes());

@@ -9,11 +9,15 @@ import lombok.Data;
 @Data
 public class Sede implements Serializable {
 
-     @Id
+    @Id
     @Column(name = "ID_SEDE")
     private int idSede;
 
     @Column(name = "NOMBRE_SEDE")
     private String nombreSede;
+
+    public Sede(int id) {
+        this.idSede = id;
+    }
 
 }

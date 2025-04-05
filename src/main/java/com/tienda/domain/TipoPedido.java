@@ -21,4 +21,8 @@ public class TipoPedido implements Serializable {
 
     @Column(name = "NOMBRE_ESTADO")
     private String nombreEstado;
+
+    public TipoPedido(int id) {
+        this.idTipoPedido = id;
+    }
 }

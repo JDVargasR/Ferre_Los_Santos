@@ -38,4 +38,12 @@ public class Pedido implements Serializable {
     @ManyToOne
     @JoinColumn(name = "ID_ESTADO")
     private Estado estado;
+
+    public Pedido(int id) {
+        this.idPedido = id;
+    }
+
+    public Pedido() {
+        
+    }
 }

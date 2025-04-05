@@ -9,7 +9,7 @@ import lombok.Data;
 @Table(name = "FIDE_PRODUCTO_TB")
 public class Producto implements Serializable {
 
-   @Id
+    @Id
     @Column(name = "ID_PRODUCTO")
     private int idProducto;
 
@@ -26,4 +26,12 @@ public class Producto implements Serializable {
     @ManyToOne
     @JoinColumn(name = "ID_ESTADO")
     private Estado estado;
+
+    public Producto(int id) {
+        this.idProducto = id;
+    }
+    
+    public Producto() {
+        
+    }
 }
